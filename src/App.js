@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Directory from "./components/directory/directory.component";
 
-function App() {
+const App = () => {
+
+  const getRndImage = () => {
+    const rndNum = Math.floor(Math.random() * 200) + 200
+    return`Https://source.unsplash.com/random/${rndNum}x${rndNum}`
+  }
+
+  const categories = [
+    {
+      id: 1,
+      title: "Hats",
+      imgUrl: getRndImage(),
+    },
+    {
+      id: 2,
+      title: "Shoes",
+      imgUrl: getRndImage(),
+    },
+    {
+      id: 3,
+      title: "Jackets",
+      imgUrl: getRndImage(),
+    },
+    {
+      id: 4,
+      title: "Trousers",
+      imgUrl: getRndImage(),
+    },
+    {
+      id: 5,
+      title: "Socks",
+      imgUrl: getRndImage(),
+    },
+  ];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Directory categories={categories} />
     </div>
   );
-}
+};
 
 export default App;
